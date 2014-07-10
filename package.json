@@ -1,0 +1,14 @@
+{
+    "name"         : "node-red-contrib-neo4j",
+    "version"      : "0.0.1",
+    "description"  : "A neo4j query node for node red",
+    "dependencies": {
+        "node-neo4j": "2.0.0-RC6"
+    },
+    "keywords": [ "node-red" ],
+    "node-red"     : {
+        "nodes": {
+            "neo4j": "neo4j/89-neo4j-cf.js"
+        }
+    }
+}

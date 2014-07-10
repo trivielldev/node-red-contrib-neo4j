@@ -1,0 +1,29 @@
+<script type="text/javascript">
+    RED.nodes.registerType('neo4j',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            url: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "neo4j.svg",
+        label: function() {
+            return this.name||"neo4j";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="neo4j">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+        <label for="node-input-url"><i class="icon-tag"></i> URL</label>
+        <input type="text" id="node-input-url" placeholder="url">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="neo4j">
+    <p>A node that takes a cypher query as input at performs it on the configured Neo4j database</p>
+</script>
