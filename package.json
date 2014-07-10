@@ -5,10 +5,19 @@
     "dependencies": {
         "node-neo4j": "2.0.0-RC6"
     },
-    "keywords": [ "node-red" ],
+    "license": "Apache",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/trivielldev/node-red-contrib-neo4j.git"
+    },
+    "keywords": [ "node-red", "neo4j" ],
     "node-red"     : {
         "nodes": {
             "neo4j": "neo4j/89-neo4j-cf.js"
         }
-    }
+    },
+    "author": {
+        "name": "Simon Litlehamar",
+        "email": "dev@trivielt.com"
+    }   
 }
