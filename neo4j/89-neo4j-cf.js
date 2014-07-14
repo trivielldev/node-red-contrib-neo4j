@@ -7,16 +7,16 @@ module.exports = function(RED) {
         
         console.log(config.url);
         var db = new neo4j(config.url);
+        var ctx = this;
         this.on('input', function(msg) {
-        	
-            var query = msg.payload.query;
-        
-            db.cypherQuery(query, function (err, results){ 
-        		if (err) throw err;
-        		node.send(results);
+        	var query = config.query;
+            var params = msg.payload;
+            db.cypherQuery(query, params, function (err, results){
+        		if (err) ctx.error(err);
+                msg.payload = results;
+        		node.send(msg);
         	});           
         });
     }
-
     RED.nodes.registerType("neo4j",Neo4jNode);
 }

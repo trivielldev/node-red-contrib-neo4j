@@ -1,10 +1,11 @@
 <script type="text/javascript">
     RED.nodes.registerType('neo4j',{
-        category: 'function',
+        category: 'storage',
         color: '#a6bbcf',
         defaults: {
             name: {value:""},
-            url: {value:""}
+            url: {value:""},
+            query: {value:""}
         },
         inputs:1,
         outputs:1,
@@ -21,9 +22,12 @@
         <input type="text" id="node-input-name" placeholder="Name">
         <label for="node-input-url"><i class="icon-tag"></i> URL</label>
         <input type="text" id="node-input-url" placeholder="url">
+        <label for="node-input-query"><i class="icon-tag"></i> Query</label>
+        <input type="text" id="node-input-query" placeholder="">
     </div>
 </script>
 
 <script type="text/x-red" data-help-name="neo4j">
-    <p>A node that takes a cypher query as input at performs it on the configured Neo4j database</p>
+    <p>A node that takes a query parameters as input (msg.payload), injects these into the query
+    and performs it on the configured Neo4j database</p>
 </script>
