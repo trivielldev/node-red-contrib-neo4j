@@ -31,6 +31,7 @@
             var that = this;
             this.editor = RED.editor.createEditor({
                 id: 'node-input-query-editor',
+                mode: 'ace/mode/sql',
                 value: $("#node-input-query").val()
             });
         },
